@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "$0")" && pwd)"
+SDK="${ANDROID_HOME:-$HOME/Library/Android/sdk}"
+TOOLS="$SDK/build-tools/36.0.0"
+ANDROID_JAR="$SDK/platforms/android-36/android.jar"
+OUT="$ROOT/build"
+KEYSTORE="${JELLYFISH_V2_KEYSTORE:-$HOME/.android/jellyfish-drift-v2.jks}"
+KEYPASS="${JELLYFISH_V2_KEYPASS:-$HOME/.android/jellyfish-drift-v2.pass}"
+VERSION_NAME="${VERSION_NAME:-2.0.0}"
+VERSION_CODE="${VERSION_CODE:-1}"
+
+for tool in javac keytool openssl zip; do
+  command -v "$tool" >/dev/null || { echo "Missing required tool: $tool" >&2; exit 1; }
+done
+[[ -f "$ANDROID_JAR" && -x "$TOOLS/aapt2" ]] || {
+  echo "Install Android SDK platform 36 and build-tools 36.0.0." >&2; exit 1;
+}
+mkdir -p "$OUT" "$(dirname "$KEYSTORE")"
+rm -rf "$OUT/classes" "$OUT/dex" "$OUT/generated"
+mkdir -p "$OUT/classes" "$OUT/dex"
+
+[[ -f "$KEYSTORE" ]] || { echo "Restore the original Jellyfish Drift V2 signing key." >&2; exit 1; }
+[[ -s "$KEYPASS" ]] || { echo "Restore the signing-key password file." >&2; exit 1; }
+
+"$TOOLS/aapt2" compile --dir "$ROOT/res" -o "$OUT/res.zip"
+"$TOOLS/aapt2" link -o "$OUT/unsigned.apk" -I "$ANDROID_JAR" \
+  --manifest "$ROOT/AndroidManifest.xml" --min-sdk-version 23 --target-sdk-version 36 \
+  --version-code "$VERSION_CODE" --version-name "$VERSION_NAME" \
+  --java "$OUT/generated" -A "$ROOT/assets" -0 mp4 "$OUT/res.zip"
+find "$ROOT/src" "$OUT/generated" -name '*.java' > "$OUT/sources.txt"
+javac --release 8 -classpath "$ANDROID_JAR" \
+  -d "$OUT/classes" @"$OUT/sources.txt"
+find "$OUT/classes" -name '*.class' > "$OUT/classes.txt"
+"$TOOLS/d8" --release --lib "$ANDROID_JAR" --min-api 23 --output "$OUT/dex" @"$OUT/classes.txt"
+(cd "$OUT/dex" && zip -q -j "$OUT/unsigned.apk" classes.dex)
+"$TOOLS/zipalign" -f 4 "$OUT/unsigned.apk" "$OUT/aligned.apk"
+"$TOOLS/apksigner" sign --ks "$KEYSTORE" --ks-pass "file:$KEYPASS" --ks-key-alias jellyfish-drift-v2 \
+  --out "$OUT/jellyfish-drift-v2.apk" "$OUT/aligned.apk"
+"$TOOLS/apksigner" verify "$OUT/jellyfish-drift-v2.apk"
+(cd "$OUT" && shasum -a 256 jellyfish-drift-v2.apk > jellyfish-drift-v2.apk.sha256)
+printf 'Built %s\n' "$OUT/jellyfish-drift-v2.apk"
+cat "$OUT/jellyfish-drift-v2.apk.sha256"

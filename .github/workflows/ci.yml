@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Build, tests, and coverage
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Set up Java
+        uses: actions/setup-java@de7274f081f381c8f8158605e0321c36c376e2e6 # v6.0.1
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Install Android SDK packages
+        run: |
+          yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses >/dev/null
+          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "platforms;android-36" "build-tools;36.0.0"
+      - name: Run host tests
+        run: bash test.sh
+      - name: Enforce installer line and branch coverage
+        run: bash scripts/test-python-coverage.sh
+      - name: Enforce Java line and branch coverage
+        run: bash scripts/test-coverage.sh
+      - name: Build and validate APK
+        env:
+          JELLYFISH_V2_KEYSTORE: ${{ runner.temp }}/jellyfish-validation.jks
+          JELLYFISH_V2_KEYPASS: ${{ runner.temp }}/jellyfish-validation.pass
+        run: |
+          umask 077
+          openssl rand -hex 24 > "$JELLYFISH_V2_KEYPASS"
+          keytool -genkeypair -keystore "$JELLYFISH_V2_KEYSTORE" -storepass:file "$JELLYFISH_V2_KEYPASS" \
+            -alias jellyfish-drift-v2 -keyalg RSA -keysize 3072 -validity 30 \
+            -dname "CN=Jellyfish Drift V2 CI Validation"
+          bash build.sh
+          "$ANDROID_HOME/build-tools/36.0.0/aapt" dump permissions build/jellyfish-drift-v2.apk
+          if "$ANDROID_HOME/build-tools/36.0.0/aapt" dump permissions build/jellyfish-drift-v2.apk | grep -q android.permission.INTERNET; then
+            echo 'The screensaver must not request network access.' >&2
+            exit 1
+          fi

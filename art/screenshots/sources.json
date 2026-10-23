@@ -1,0 +1,51 @@
+{
+  "capturedAt": "2026-10-23",
+  "platform": "Android TV API 34 emulator",
+  "resolution": [
+    1920,
+    1080
+  ],
+  "candidate": "2.0.0/code1",
+  "apkSha256": "36670ddde785473a5b3bb699438947d5f556a467cb4fabfe90b5fc387fbced67",
+  "captureMethod": "adb exec-out screencap -p after native interface settled",
+  "route": "Native Preview and Settings; not an actual bound Dream",
+  "images": [
+    {
+      "file": "v2-blue-preview.png",
+      "sha256": "383bc2c05dc97cbdcba8271a0accf01772aa3c757de9888d887562754fe31577",
+      "description": "Blue aquarium, recorded playback speed",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "file": "v2-deep-preview.png",
+      "sha256": "e97c30e393c3bafac082a943402772a426565a5b82c1310d35007ed0064a30d6",
+      "description": "Deep ocean, recorded playback speed",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "file": "v2-settings.png",
+      "sha256": "3f50f4198792ca039064534d28509016464a59f57581f6db7782e9034677bddd",
+      "description": "Three effective filmed controls",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "file": "v2-credits.png",
+      "sha256": "34ceafaf9eacaf3aa574dd70c3e2c670f8924657be8f80fd9039b40e97991fe1",
+      "description": "Offline footage attribution",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "file": "v2-licenses-scrolled.png",
+      "sha256": "1201b9f94b95454c568f7d2325fb8e0cb19e98b469fe50784fc10e186472f88f",
+      "description": "Scrollable source notices",
+      "width": 1920,
+      "height": 1080
+    }
+  ],
+  "physicalPerformanceClaim": false,
+  "mediaAttribution": "Blue aquarium: Eric Polk, Aurelia labiata swimming, CC BY-SA 4.0. Deep ocean: NOAA Ocean Exploration Crossota footage, public-domain source. See assets/NOTICE.txt and assets/media.json."
+}
