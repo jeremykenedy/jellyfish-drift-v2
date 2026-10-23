@@ -7,7 +7,8 @@ public final class SettingsValues {
     if (key == null || value == null) return false;
     if ("background".equals(key)) return oneOf(value, "dark", "light", "random");
     if ("motion".equals(key)) return oneOf(value, "slow", "normal", "fast", "random");
-    if ("randomize_all".equals(key)) return oneOf(value, "true", "false");
+    if ("randomize_all".equals(key) || "show_clock".equals(key))
+      return oneOf(value, "true", "false");
     return false;
   }
 

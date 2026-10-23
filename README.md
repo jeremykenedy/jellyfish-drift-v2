@@ -50,6 +50,7 @@ Playback uses bundled files, with no network permission, advertisements, analyti
 | Offline playback | Silent 1080p H264 with a 720p fallback | [Architecture](docs/ARCHITECTURE.md) |
 | Native TV settings | Remote controls, Preview, and offline licenses | [Current gallery](docs/SCREENSHOTS.md) |
 | DreamService | The same scene player in Preview and the Android screensaver service | [Verified behavior](docs/VERIFICATION.md) |
+| Optional clock | Local time, slowly drifting, off by default | [Clock settings](docs/CONFIGURATION.md) |
 
 The recordings repeat every 16 or approximately 19 seconds, with editorial dissolves. Animal count, species, lighting, and camera movement come from each recording. Density, species, and light-ray controls are not provided because the animals and lighting come from the recordings.
 
@@ -98,15 +99,15 @@ Toolkit also manages launcher choices, sleep/screensaver timers, and supported s
 
 ## Configuration
 
-Open Jellyfish Drift V2 from the TV launcher to choose a recording or playback speed, watch Preview, or read Credits and licenses. Changes apply when the next view starts. [Configuration](docs/CONFIGURATION.md) documents all three effective controls and its separate three-value settings provider.
+Open Jellyfish Drift V2 from the TV launcher to choose a recording or playback speed, watch Preview, or read Credits and licenses. Changes apply when the next view starts. [Configuration](docs/CONFIGURATION.md) documents all four effective controls and its separate four-value settings provider.
 
 ## Screenshots
 
 <table>
-<tr><td width="33%"><img src="art/screenshots/v2-blue-preview.png" alt="Blue aquarium, recorded playback speed"><br>Blue aquarium, recorded playback speed</td><td width="33%"><img src="art/screenshots/v2-deep-preview.png" alt="Deep ocean, recorded playback speed"><br>Deep ocean, recorded playback speed</td><td width="33%"><img src="art/screenshots/v2-settings.png" alt="Three effective filmed controls"><br>Three effective filmed controls</td></tr>
+<tr><td width="33%"><img src="art/screenshots/physical-blue-clock-off.png" alt="Clock off"><br>Clock off</td><td width="33%"><img src="art/screenshots/physical-deep-clock-drift.png" alt="Clock on"><br>Clock on</td><td width="33%"><img src="art/screenshots/physical-settings.png" alt="Native settings"><br>Native settings</td></tr>
 </table>
 
-Current native emulator captures. See the [full gallery and provenance](docs/SCREENSHOTS.md). Physical device and bound Dream gates for this split package remain pending.
+Current physical Fire TV captures show actual Blue/Deep Dreams and native settings. See the [full gallery and provenance](docs/SCREENSHOTS.md) and [two-preset presentation scope](docs/VERIFICATION.md).
 
 ## Building and testing
 

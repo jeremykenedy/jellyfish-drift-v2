@@ -7,6 +7,7 @@ public final class JellyfishOptionsTest {
     verifyFilmedOptions();
     verifyRandomSelections();
     verifySettingsProviderValues();
+    verifyOptionalClock();
     System.out.println("Jellyfish settings tests passed.");
   }
 
@@ -57,6 +58,12 @@ public final class JellyfishOptionsTest {
     check(!SettingsValues.isSupported("density", "few"), "unsupported density rejected");
     check(!SettingsValues.isSupported("species", "moon"), "unsupported species rejected");
     check(!SettingsValues.isSupported("light_rays", "on"), "unsupported rays rejected");
+  }
+
+  private static void verifyOptionalClock() {
+    check(SettingsValues.isSupported("show_clock", "true"), "clock opt-in accepted");
+    check(SettingsValues.isSupported("show_clock", "false"), "clock opt-out accepted");
+    check(!SettingsValues.isSupported("show_clock", "on"), "ambiguous clock value rejected");
   }
 
   private static void check(boolean result, String message) {

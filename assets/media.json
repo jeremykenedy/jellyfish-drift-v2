@@ -2,7 +2,7 @@
   "status": "isolated candidate; production-native and physical acceptance pending",
   "sourcePrimary": "858aa980eba1b7aabcaa61887afcb971efbd5d50",
   "candidateVersion": "2.0.0",
-  "candidateCode": 1,
+  "candidateCode": 2,
   "effectiveSettings": {
     "background": {
       "dark": "Deep ocean / Crossota",
@@ -15,7 +15,8 @@
       "fast": 1.25,
       "random": "Random playback speed"
     },
-    "randomize_all": "Only scene and speed"
+    "randomize_all": "Only scene and speed",
+    "show_clock": "Optional local clock, default off; never changed by randomize_all"
   },
   "media": [
     {
