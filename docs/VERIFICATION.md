@@ -1,29 +1,26 @@
 # Verification
 
-This document concerns the new, separately installed Jellyfish Drift V2 package. Prior filmed Jellyfish Drift 2.0 tests used a different Android package and signer; they establish source-video provenance and a reference architecture, not completion of this package's device gates.
+The current Jellyfish Drift V2 candidate is 2.0.0, Android code 2. Its signed APK SHA-256 is `90697388e2719412136ecf9ee0859f9245a17fb22188e9cfeb14d685a9e5b2ed`, 35,292,388 bytes. Package identities and signing keys remain separate between classic and V2.
 
-## Candidate
+## Current checks
 
-- Package: `com.jeremykenedy.jellyfishdriftv2`.
-- Version: 2.0.0, Android code 1.
-- Effective settings: scene, playback speed, randomization.
-- Original Jellyfish Drift data and selection remain independent.
+Local settings/installer tests, formatter, privacy checks, and 100% line/branch coverage of the actual pure options and validation sources pass. Android rendering and framework lifecycle are verified separately on native platforms.
 
-## Checks
+On October 22, 2026, the exact code 2 signed candidate passed a same-signer API 34 emulator update retaining all 3 previous raw settings and adding `show_clock=false`. Its schema/settings cursors expose 4 values. Actual D-pad interaction enabled and disabled Show clock. Both explicit choices remained unchanged while randomize-all was enabled. Current Preview captures visibly show time only when enabled, with a small real position change across 20 seconds. Settings, scrollable offline Credits, the actual Close button, Preview, and Back passed. All baselines, including external file bytes and absent markers, were persisted before mutation. Cleanup restored the previous raw values and surrounding state exactly; the new default-off clock row is intentionally retained.
 
-Local settings and installer tests, formatter, and full line/branch coverage for the pure options/validation classes pass (21 lines, 28 branches). The current signed artifact is SHA-256 `36670ddde785473a5b3bb699438947d5f556a467cb4fabfe90b5fc387fbced67`, 35,288,292 bytes. Its independent signing certificate is `48a625bc388ac96301a5d9b614e6c5e157a98f359b49a8495ab562622d01f85c`.
-
-On October 22, 2026, the exact new-package candidate passed native three-value schema validation, actual D-pad scene/speed/randomization selection with provider readback, offline Credits scrolling and the actual Close button, Preview, and Back. Blue aquarium was recorded for 35 seconds and Deep ocean for 40 seconds at recorded speed, each spanning two editorial loops. These current recordings still require moving visual review; no physical performance figure is claimed. The classic package's six saved values remained unchanged throughout the V2 gate. All test baselines, including external file bytes, were persisted before changes and exact restoration completed without errors.
-
-| Platform | Evidence |
+| Platform | Current evidence |
 | --- | --- |
-| Android TV API 34 emulator, 1920 x 1080 | Current settings, credits, Preview, three-control selection, two-loop recordings, and package isolation passed; current captures in the [gallery](SCREENSHOTS.md) |
-| Actual bound Dream on API 34 emulator | Not established: exported Somnambulator returned no current Dream; this production AVD does not permit root-only dream commands |
-| Physical Fire TV | New-package gate pending |
+| Android TV API 34 emulator, 1920 x 1080 | Current update, legacy retention, 4-row schema, D-pad clock on/off, randomization independence, 20-second drift pair, Settings/Credits/Close/Preview/Back passed |
+| Actual bound Dream on API 34 emulator | Not established: the production AVD does not allow root-only dream commands and exported Somnambulator did not bind a Dream in prior tests |
+| Physical Fire TV | Current code 2 Dream, decoder/rendering and presentation gate pending |
 | Physical Google TV | Untested; a volunteer with this device is needed |
 
-Please report model, OS/API, resolution, tested behavior, and results through the repository's issue tracker when helping verify an untested device.
+Please report model, OS/API, resolution, tested behavior, and results through the repository's issue tracker when helping verify an untested device. Current [screenshots and provenance](SCREENSHOTS.md) identify the exact candidate. No physical performance or owner visual-acceptance claim is made.
 
-## Limits
+## Earlier reference evidence
 
-The source recordings are 1080p, with 720p decoder fallback, not native 4K footage. Blue aquarium repeats every 16 seconds; Deep ocean repeats approximately every 19 seconds and includes a source camera-view transition. Editorial dissolves remain visible limitations. Sustained thermal behavior and vendor automatic idle activation are not established by a build or an emulator test. A successful functional gate does not imply owner visual acceptance.
+Earlier separate-package code 1 passed native scene/speed/randomization controls and recorded Blue aquarium for 35 seconds and Deep ocean for 40 seconds, spanning two edited loops. Its source-media/player evidence remains a clock-off reference, not proof of the current clock overlay's physical behavior. Original-package filmed v2 measurements are not claimed for this separate package.
+
+## Media limits
+
+Source recordings are 1080p with a 720p decoder fallback, not native 4K footage. Blue aquarium repeats every 16 seconds; Deep ocean approximately every 19 seconds and includes a source camera transition. Editorial dissolves and source artifacts remain limitations. Sustained thermal behavior and automatic idle activation across vendors are unverified.

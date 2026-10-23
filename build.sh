@@ -9,7 +9,7 @@ OUT="$ROOT/build"
 KEYSTORE="${JELLYFISH_V2_KEYSTORE:-$HOME/.android/jellyfish-drift-v2.jks}"
 KEYPASS="${JELLYFISH_V2_KEYPASS:-$HOME/.android/jellyfish-drift-v2.pass}"
 VERSION_NAME="${VERSION_NAME:-2.0.0}"
-VERSION_CODE="${VERSION_CODE:-1}"
+VERSION_CODE="${VERSION_CODE:-2}"
 
 for tool in javac keytool openssl zip; do
   command -v "$tool" >/dev/null || { echo "Missing required tool: $tool" >&2; exit 1; }

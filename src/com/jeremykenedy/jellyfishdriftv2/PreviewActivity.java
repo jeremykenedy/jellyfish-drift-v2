@@ -26,7 +26,7 @@ public final class PreviewActivity extends Activity {
                     .setMessage("The bundled scene could not be played on this device.")
                     .setPositiveButton("Back to settings", (dialog, which) -> finish())
                     .show());
-    setContentView(scene);
+    setContentView(JellyfishClock.wrap(this, scene));
   }
 
   @Override

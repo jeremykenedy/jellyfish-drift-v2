@@ -1,51 +1,73 @@
 {
+  "candidate": "2.0.0/code2",
+  "apkSha256": "90697388e2719412136ecf9ee0859f9245a17fb22188e9cfeb14d685a9e5b2ed",
   "capturedAt": "2026-10-23",
   "platform": "Android TV API 34 emulator",
   "resolution": [
     1920,
     1080
   ],
-  "candidate": "2.0.0/code1",
-  "apkSha256": "36670ddde785473a5b3bb699438947d5f556a467cb4fabfe90b5fc387fbced67",
-  "captureMethod": "adb exec-out screencap -p after native interface settled",
-  "route": "Native Preview and Settings; not an actual bound Dream",
+  "captureMethod": "adb exec-out screencap -p from native Settings and Preview",
+  "actualBoundDreamClaim": false,
+  "physicalPerformanceClaim": false,
+  "clock": "Default off, independent of randomize_all; on-start/drift are the same Preview 20 seconds apart",
   "images": [
     {
-      "file": "v2-blue-preview.png",
-      "sha256": "383bc2c05dc97cbdcba8271a0accf01772aa3c757de9888d887562754fe31577",
-      "description": "Blue aquarium, recorded playback speed",
+      "file": "clock-off.png",
+      "description": "Clock off",
+      "sha256": "1f1bd3d72c94d92ac10fa7c3e456b92adcf39a36cc716f94f1197329891fb402",
       "width": 1920,
       "height": 1080
     },
     {
-      "file": "v2-deep-preview.png",
-      "sha256": "e97c30e393c3bafac082a943402772a426565a5b82c1310d35007ed0064a30d6",
-      "description": "Deep ocean, recorded playback speed",
+      "file": "clock-on-start.png",
+      "description": "Clock on",
+      "sha256": "0153f9f716d5863afb0742b5c60efa33370e9c0bcff2bfac95a3f84447335cce",
       "width": 1920,
       "height": 1080
     },
     {
-      "file": "v2-settings.png",
-      "sha256": "3f50f4198792ca039064534d28509016464a59f57581f6db7782e9034677bddd",
-      "description": "Three effective filmed controls",
+      "file": "settings.png",
+      "description": "Native settings",
+      "sha256": "063330d69be085d37f4c4a94d09b003ad6ad5005ce5d4a69cf7b726b74c20764",
       "width": 1920,
       "height": 1080
     },
     {
-      "file": "v2-credits.png",
-      "sha256": "34ceafaf9eacaf3aa574dd70c3e2c670f8924657be8f80fd9039b40e97991fe1",
-      "description": "Offline footage attribution",
+      "file": "clock-on-drift.png",
+      "description": "Clock after 20 seconds of drift",
+      "sha256": "8792cfd4f383fbcc928a7031e34aa93d4245d9a27560eefce24cedd4cdf6d4aa",
       "width": 1920,
       "height": 1080
     },
     {
-      "file": "v2-licenses-scrolled.png",
-      "sha256": "1201b9f94b95454c568f7d2325fb8e0cb19e98b469fe50784fc10e186472f88f",
-      "description": "Scrollable source notices",
+      "file": "clock-on-random.png",
+      "description": "Clock on with randomized scene",
+      "sha256": "fa236a199c57f46d06d11f1919a154aec477f222d5123bcdbfbee0c0ba2ce229",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "file": "clock-off-random.png",
+      "description": "Clock off with randomized scene",
+      "sha256": "588073d406f56084f0debc7aa052f827d238126ccb2e0fc1c0384f2203d7949e",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "file": "credits.png",
+      "description": "Offline credits",
+      "sha256": "2df89ffea5043d7f92341722d2604d7d117f5b9987ab1abb989152c984ef5fec",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "file": "licenses-scrolled.png",
+      "description": "Scrollable licenses",
+      "sha256": "9e07f6a4924281af9b47453e60c13aba767f86dc9addaade920715701026ed03",
       "width": 1920,
       "height": 1080
     }
   ],
-  "physicalPerformanceClaim": false,
-  "mediaAttribution": "Blue aquarium: Eric Polk, Aurelia labiata swimming, CC BY-SA 4.0. Deep ocean: NOAA Ocean Exploration Crossota footage, public-domain source. See assets/NOTICE.txt and assets/media.json."
+  "mediaAttribution": "Blue aquarium Eric Polk CC BY-SA4.0; Deep ocean NOAA Ocean Exploration public-domain source; see assets/NOTICE.txt and media.json."
 }

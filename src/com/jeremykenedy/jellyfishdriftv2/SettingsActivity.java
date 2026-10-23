@@ -56,6 +56,13 @@ public final class SettingsActivity extends Activity {
         new String[] {"slow", "normal", "fast", "random"},
         new String[] {"0.9x", "1x (recorded speed)", "1.25x", "Random speed"},
         "normal");
+    CheckBox clock = new CheckBox(this);
+    clock.setText("Show clock");
+    clock.setTextSize(18);
+    clock.setChecked(preferences.getBoolean("show_clock", false));
+    clock.setOnCheckedChangeListener(
+        (button, checked) -> preferences.edit().putBoolean("show_clock", checked).apply());
+    content.addView(clock);
     CheckBox randomize = new CheckBox(this);
     randomize.setText("Random scene and playback speed each start");
     randomize.setTextSize(18);
