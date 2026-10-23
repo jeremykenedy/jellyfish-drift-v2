@@ -104,10 +104,10 @@ Open Jellyfish Drift V2 from the TV launcher to choose a recording or playback s
 ## Screenshots
 
 <table>
-<tr><td width="33%"><img src="art/screenshots/clock-off.png" alt="Clock off"><br>Clock off</td><td width="33%"><img src="art/screenshots/clock-on-start.png" alt="Clock on"><br>Clock on</td><td width="33%"><img src="art/screenshots/settings.png" alt="Native settings"><br>Native settings</td></tr>
+<tr><td width="33%"><img src="art/screenshots/physical-blue-clock-off.png" alt="Clock off"><br>Clock off</td><td width="33%"><img src="art/screenshots/physical-deep-clock-drift.png" alt="Clock on"><br>Clock on</td><td width="33%"><img src="art/screenshots/physical-settings.png" alt="Native settings"><br>Native settings</td></tr>
 </table>
 
-Current native emulator captures. See the [full gallery and provenance](docs/SCREENSHOTS.md). Physical device and bound Dream gates for this clock candidate remain pending.
+Current physical Fire TV captures show actual Blue/Deep Dreams and native settings. See the [full gallery and provenance](docs/SCREENSHOTS.md) and [two-preset presentation scope](docs/VERIFICATION.md).
 
 ## Building and testing
 
