@@ -1,6 +1,13 @@
 # Screenshots
 
-Current 2.0.0/code2 native captures from an Android TV API 34 emulator at 1920 x 1080, October 22, 2026 (Pacific). These show Settings and Preview, not an actual bound Dream or physical performance proof.
+Physical Fire TV AFTDEC012E/API 30 captures of the exact 2.0.0/code2 candidate at 1920 x 1080, October 22, 2026 (Pacific). Blue uses 0.9x with clock off; Deep uses 1.25x with clock on. These are actual bound non-test Dreams; the two Deep captures show an early and later clock position. Settings and offline licenses remain outside the Dream.
+
+<table>
+<tr><td width="33%"><img src="../art/screenshots/physical-blue-clock-off.png" alt="Physical Blue aquarium normal Dream, clock off"><br>Physical Blue aquarium normal Dream, clock off</td><td width="33%"><img src="../art/screenshots/physical-deep-clock-start.png" alt="Physical Deep ocean normal Dream with clock, early capture"><br>Physical Deep ocean normal Dream with clock, early capture</td><td width="33%"><img src="../art/screenshots/physical-deep-clock-drift.png" alt="Physical Deep ocean normal Dream with clock, later capture"><br>Physical Deep ocean normal Dream with clock, later capture</td></tr>
+<tr><td width="33%"><img src="../art/screenshots/physical-settings.png" alt="Physical native settings"><br>Physical native settings</td><td width="33%"><img src="../art/screenshots/physical-credits.png" alt="Physical offline source credits"><br>Physical offline source credits</td><td width="33%"><img src="../art/screenshots/physical-licenses-scrolled.png" alt="Physical scrolled source notices"><br>Physical scrolled source notices</td></tr>
+</table>
+
+Additional 2.0.0/code2 native captures from an Android TV API 34 emulator at 1920 x 1080, October 22, 2026 (Pacific). These show Settings and Preview, not an actual bound Dream or physical performance proof.
 
 <table>
 <tr><td width="33%"><img src="../art/screenshots/clock-off.png" alt="Clock off"><br>Clock off</td><td width="33%"><img src="../art/screenshots/clock-on-start.png" alt="Clock on"><br>Clock on</td><td width="33%"><img src="../art/screenshots/settings.png" alt="Native settings"><br>Native settings</td></tr>

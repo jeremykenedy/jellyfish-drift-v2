@@ -12,10 +12,16 @@ On October 22, 2026, the exact code 2 signed candidate passed a same-signer API 
 | --- | --- |
 | Android TV API 34 emulator, 1920 x 1080 | Current update, legacy retention, 4-row schema, D-pad clock on/off, randomization independence, 20-second drift pair, Settings/Credits/Close/Preview/Back passed |
 | Actual bound Dream on API 34 emulator | Not established: the production AVD does not allow root-only dream commands and exported Somnambulator did not bind a Dream in prior tests |
-| Physical Fire TV | Current code 2 Dream, decoder/rendering and presentation gate pending |
+| Physical Fire TV AFTDEC012E, API 30, 1920 x 1080 surface | Exact code 2 installed hash verified; Blue aquarium 0.9x clock off and Deep ocean 1.25x clock on bound as normal non-test Dreams. Minimum sampled presentation rates 27.00 and 36.59 FPS respectively. Actual scene/speed/randomization widgets, D-pad clock on/off, Credits/Close, Back, and strict state restoration passed |
 | Physical Google TV | Untested; a volunteer with this device is needed |
 
-Please report model, OS/API, resolution, tested behavior, and results through the repository's issue tracker when helping verify an untested device. Current [screenshots and provenance](SCREENSHOTS.md) identify the exact candidate. No physical performance or owner visual-acceptance claim is made.
+Please report model, OS/API, resolution, tested behavior, and results through the repository's issue tracker when helping verify an untested device. Current [screenshots and provenance](SCREENSHOTS.md) identify the exact candidate. These measurements describe the two tested presets on this device only; owner visual acceptance is not claimed.
+
+## Physical presentation scope
+
+SurfaceFlinger actual-present timestamp windows were sampled after 40 seconds of settling, without screen recording. The minimum per-window rates were 27.00 FPS for Blue aquarium at 0.9x with the clock off and 36.59 FPS for Deep ocean at 1.25x with the clock on. Separate 127-frame buffers are sampled windows, not a continuous full-duration capture. Decoder counts and composite-layer refresh are not used as video-frame-rate claims. An early/final native image pair also shows the moving clock during the actual Deep ocean Dream.
+
+All four provider settings were readable. This was a new installation on this physical device, so physical in-place V2 preference retention is not claimed. Surrounding state, all external baseline bytes, guard/VPN state, and fresh Asleep with the launcher beneath were restored. The other app's unavailable provider was recorded as unsupported rather than treated as readable preferences. Current public gallery/browser, primary-branch, and release-artifact gates remain pending.
 
 ## Earlier reference evidence
 

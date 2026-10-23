@@ -69,5 +69,74 @@
       "height": 1080
     }
   ],
-  "mediaAttribution": "Blue aquarium Eric Polk CC BY-SA4.0; Deep ocean NOAA Ocean Exploration public-domain source; see assets/NOTICE.txt and media.json."
+  "mediaAttribution": "Blue aquarium Eric Polk CC BY-SA4.0; Deep ocean NOAA Ocean Exploration public-domain source; see assets/NOTICE.txt and media.json.",
+  "physicalImages": [
+    {
+      "file": "physical-blue-clock-off.png",
+      "description": "Physical Blue aquarium normal Dream, clock off",
+      "sha256": "15a646bf7cc72d861c77ae38d5c4d58eb8f6dffbd6ceb88a794cb2bcce3e1d2e",
+      "width": 1920,
+      "height": 1080,
+      "platform": "Physical Fire TV AFTDEC012E API 30",
+      "capturedAtUTC": "2026-10-23",
+      "apkSha256": "90697388e2719412136ecf9ee0859f9245a17fb22188e9cfeb14d685a9e5b2ed",
+      "actualBoundDream": true
+    },
+    {
+      "file": "physical-deep-clock-start.png",
+      "description": "Physical Deep ocean normal Dream with clock, early capture",
+      "sha256": "498e9a69bd8593f845a26b443c26af1ada9b6285e7bf369d5644f7feb8c7a8dc",
+      "width": 1920,
+      "height": 1080,
+      "platform": "Physical Fire TV AFTDEC012E API 30",
+      "capturedAtUTC": "2026-10-23",
+      "apkSha256": "90697388e2719412136ecf9ee0859f9245a17fb22188e9cfeb14d685a9e5b2ed",
+      "actualBoundDream": true
+    },
+    {
+      "file": "physical-deep-clock-drift.png",
+      "description": "Physical Deep ocean normal Dream with clock, later capture",
+      "sha256": "b191811c2334b38d8594580fd0cae9ddcc464943c1b529c39ed3d9e0d1a4c5c1",
+      "width": 1920,
+      "height": 1080,
+      "platform": "Physical Fire TV AFTDEC012E API 30",
+      "capturedAtUTC": "2026-10-23",
+      "apkSha256": "90697388e2719412136ecf9ee0859f9245a17fb22188e9cfeb14d685a9e5b2ed",
+      "actualBoundDream": true
+    },
+    {
+      "file": "physical-settings.png",
+      "description": "Physical native settings",
+      "sha256": "5db39ae8c5184b2f17dec3dec0afc83996eb145913de9b6b60a21a851d760a4e",
+      "width": 1920,
+      "height": 1080,
+      "platform": "Physical Fire TV AFTDEC012E API 30",
+      "capturedAtUTC": "2026-10-23",
+      "apkSha256": "90697388e2719412136ecf9ee0859f9245a17fb22188e9cfeb14d685a9e5b2ed",
+      "actualBoundDream": false
+    },
+    {
+      "file": "physical-credits.png",
+      "description": "Physical offline source credits",
+      "sha256": "113b6295d59edfd9676c62329943665bc01482875372044d497a3e1060e5c39a",
+      "width": 1920,
+      "height": 1080,
+      "platform": "Physical Fire TV AFTDEC012E API 30",
+      "capturedAtUTC": "2026-10-23",
+      "apkSha256": "90697388e2719412136ecf9ee0859f9245a17fb22188e9cfeb14d685a9e5b2ed",
+      "actualBoundDream": false
+    },
+    {
+      "file": "physical-licenses-scrolled.png",
+      "description": "Physical scrolled source notices",
+      "sha256": "23d07d41042994199246a0e40e40ab3bb1a6c59aef0a589fd3a0759bb69ced2e",
+      "width": 1920,
+      "height": 1080,
+      "platform": "Physical Fire TV AFTDEC012E API 30",
+      "capturedAtUTC": "2026-10-23",
+      "apkSha256": "90697388e2719412136ecf9ee0859f9245a17fb22188e9cfeb14d685a9e5b2ed",
+      "actualBoundDream": false
+    }
+  ],
+  "physicalImageScope": "Current code2; two paired non-test Dream cases, not a four-case retest; no screenrecord during pacing"
 }
